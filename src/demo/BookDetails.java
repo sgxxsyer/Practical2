@@ -1,8 +1,7 @@
-package demo;
-
 /**
- * Created by 141872Z on 10/29/2015.
+ * Created by 144320d on 10/29/2015.
  */
+package demo;
 public class BookDetails {
     private String bookId = null;
     private String title = null;
@@ -14,20 +13,20 @@ public class BookDetails {
     private String description = null;
     private int inventory = 0;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getBookId() {
         return bookId;
     }
 
     public void setBookId(String bookId) {
         this.bookId = bookId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getFirstName() {
@@ -85,6 +84,4 @@ public class BookDetails {
     public void setInventory(int inventory) {
         this.inventory = inventory;
     }
-
-
 }

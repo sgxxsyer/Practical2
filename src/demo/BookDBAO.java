@@ -1,5 +1,6 @@
 package demo;
 
+import java.awt.print.Book;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +10,6 @@ import java.util.Random;
  * Created by chitboon on 10/23/15.
  */
 public class BookDBAO {
-    private Random random = new Random();
-
 
     Connection con;
     // Database configuration
@@ -84,10 +83,11 @@ public class BookDBAO {
         }
         return list;
     }
+
     public BookDetails getBook() {
+        Random random = new Random();
         List<BookDetails> list = getAllBook();
         int i = random.nextInt(list.size());
         return list.get(i);
     }
-
 }
