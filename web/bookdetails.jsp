@@ -5,10 +5,10 @@
   Time: 4:53 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="demo.*" %>
+<%@ page import="model.*" %>
 <%
 
-  BookDetails book = (BookDetails)request.getAttribute("book");
+  BooksEntity book = (BooksEntity)request.getAttribute("book");
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -21,10 +21,10 @@
   <br> &nbsp;
   <hr>
 </center>
-<h2><%= book.getTitle() %></h2>&nbsp; by<em> <%= book.getFirstName() + " " + book.getSurname() %> </em> (<%= book.getYear() %>)<br> <br>
+<h2><%= book.getTitle() %></h2>&nbsp; by<em> <%= book.getFirstName() + " " + book.getSurname() %> </em> (<%= book.getCalendarYear() %>)<br> <br>
 <h4>Here's what the critcs say: </h4>
 <blockquote>What a cool book.</blockquote>
 <h4>Our Price: <%= book.getPrice() %></h4>
-<p><strong><a href="/bookcatalog?bookId=<%= book.getBookId() %>">Add to Cart</a> <a href="/bookcatalog">Continue Shopping</a></strong></p>
+<p><strong><a href="/bookcatalog?bookId=<%= book.getId() %>">Add to Cart</a> <a href="/bookcatalog">Continue Shopping</a></strong></p>
 </body>
 </html>

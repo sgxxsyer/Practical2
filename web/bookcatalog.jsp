@@ -1,9 +1,10 @@
 <html>
 <head><title>Duke's Bookstore</title></head>
-<%@ page import="demo.*, java.util.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="model.*" %>
 <%
-  BookDBAO db = new BookDBAO();
-  List<BookDetails> books =db.getAllBook();
+  BookDAO db = new BookDAO();
+  List<BooksEntity> books =db.getAllBook();
 %>
 <body bgcolor="#ffffff">
 <center>
@@ -19,12 +20,12 @@
 <center>
   <table summary="layout">
     <%
-      for (BookDetails book : books) {
+      for (BooksEntity book : books) {
     %>
     <tr>
-      <td bgcolor="#ffffaa"><a href="/bookdetails?bookId=<%= book.getBookId() %>"> <strong><%= book.getTitle()%></strong></a></td>
+      <td bgcolor="#ffffaa"><a href="/bookdetails?bookId=<%= book.getId() %>"> <strong><%= book.getTitle()%></strong></a></td>
       <td bgcolor="#ffffaa" rowspan=2><%= book.getPrice() %></td>
-      <td bgcolor="#ffffaa" rowspan=2><a href="/bookcatalog?bookId=<%= book.getBookId() %>"> Add to Cart</a></td>
+      <td bgcolor="#ffffaa" rowspan=2><a href="/bookcatalog?bookId=<%= book.getId() %>"> Add to Cart</a></td>
     </tr>
     <tr>
       <td>by<em><%= book.getFirstName() %></em></td>

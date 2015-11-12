@@ -15,6 +15,7 @@ public class BookDAO {
     public BooksEntity getBook() {
         List<BooksEntity> list = getAllBook();
         int i = random.nextInt(list.size());
+
         return list.get(i);
     }
     public List<BooksEntity> getAllBook() {
@@ -27,4 +28,12 @@ public class BookDAO {
         }
         return list;
     }
+
+    public BooksEntity getBookDetails(int id){
+        Query query = em.createQuery("select b from BooksEntity  b where b.id = "+"'"+id+"'");
+        BooksEntity be =(BooksEntity)query.getSingleResult();
+        return be;
+    }
+
+
 }
